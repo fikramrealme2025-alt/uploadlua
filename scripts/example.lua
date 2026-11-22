@@ -12,6 +12,6 @@ BD.eachHeroAll(function(id, plan)
       if size then BD.editField(e.ns, e.cls, e.name, HeroInstance, math.floor(e.value), size) end
     end
   end
-end, 100)
+end, 5580)
 
 BD.restore()
