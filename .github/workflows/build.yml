@@ -1,0 +1,20 @@
+name: Build BattleData Lua 5.1
+
+on:
+  push:
+    paths: ["input/**", "src/**", "scripts/**", "bin/**", ".github/workflows/build.yml"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: sudo apt-get install -y lua5.1
+      - run: node bin/bdlua.js build -s scripts/example.lua
+      - uses: actions/upload-artifact@v4
+        with:
+          name: BattleData-Lua51
+          path: dist/*
