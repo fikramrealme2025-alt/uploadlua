@@ -1,0 +1,11 @@
+{
+  "name": "battledata-lua-framework",
+  "version": "1.0.0",
+  "bin": { "bdlua": "bin/bdlua.js" },
+  "scripts": {
+    "build": "node bin/bdlua.js build",
+    "build:example": "node bin/bdlua.js build -s scripts/example.lua"
+  },
+  "engines": { "node": ">=16" },
+  "private": true
+}
